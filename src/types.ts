@@ -1,0 +1,43 @@
+export type Order = {
+  id: number;
+  order_code?: string;
+  status: string;
+  sub_status?: string;
+  total_amount: number;
+  currency: string;
+  store_id: number;
+  created_at: string;
+  updated_at?: string;
+  estimated_profit?: number;
+  carrier?: string;
+  shipping_company?: string;
+  tracking_number?: string;
+  tracking_url?: string;
+  shipping_address: {
+    full_name?: string;
+    first_name?: string;
+    last_name?: string;
+    city?: string;
+    state?: string;
+    province?: string;
+    email?: string;
+    phone_number?: string;
+    address_line_1?: string;
+    address_line_2?: string;
+    zip_code?: string;
+  };
+  line_items: {
+    product_id?: number;
+    variant_id: number;
+    product_name: string;
+    quantity: number;
+    unit_price: number;
+  }[];
+};
+export type StockSignal = { drop24h: number; restocked24h: number; observations: number; compared: boolean; previousStock: number | null; currentStock: number; lastObserved: string; lastDrop: string | null; history: { at: string; stock: number }[] };
+export type Product = { id: number; product_id?: number; name: string; status: string; stockRadar?: StockSignal | null; media?: { images?: string[] }; variants?: { variant_id: number; name?: string; sku?: string; stock?: number; price?: number; currency?: string; wholesale_price?: number }[] };
+export type Shop = { id: number; name: string; store_type: string; domain?: string; status?: string };
+export type Issue = { id: number; status: string; is_active?: boolean; order_id?: number; description?: string };
+export type Event = { id: string; topic: string; resource_id: string; received: string };
+export type Data = { orders: Order[]; products: Product[]; shops: Shop[]; issues: Issue[]; events: Event[] };
+export type Status = { configured: boolean; market: string; markets?: { market: string; configured: boolean; signingConfigured: boolean }[]; signingConfigured: boolean; persistenceEnabled?: boolean; syncing: boolean; productSync?: { loaded: number; total: number | null } | null; productsLastSync?: string | null; productsError?: string | null; lastSync: string | null; lastError: string | null };

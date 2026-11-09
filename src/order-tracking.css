@@ -1,0 +1,681 @@
+/* Order Tracking & Lifecycle Stepper Styles - Balanced Proportions */
+
+.tracking-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  max-width: 100% !important;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  width: 100%;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumbs */
+.tracking-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+.tracking-breadcrumbs a,
+.tracking-breadcrumbs button {
+  color: #64748b;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  transition: color 0.15s;
+}
+
+.tracking-breadcrumbs a:hover,
+.tracking-breadcrumbs button:hover {
+  color: #2563eb;
+}
+
+.tracking-breadcrumbs .current {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+:root[data-theme='dark'] .tracking-breadcrumbs .current,
+.theme-dark .tracking-breadcrumbs .current {
+  color: #f1f5f9;
+}
+
+/* Toolbar & Selector */
+.tracking-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  background: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  width: 100%;
+}
+
+.tracking-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.6rem;
+  padding: 0.35rem 0.75rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.tracking-search-box input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #1e293b;
+  outline: none;
+}
+
+.tracking-recent-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  max-width: 60%;
+}
+
+.tracking-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.785rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.tracking-pill-btn:hover,
+.tracking-pill-btn.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-color: #93c5fd;
+}
+
+/* Main Stepper Card (Harmonious Proportions) */
+.tracking-main-card {
+  background: #ffffff;
+  border-radius: 1.15rem;
+  padding: 1.45rem 1.85rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.tracking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.tracking-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.tracking-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.85rem;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.15);
+  flex-shrink: 0;
+}
+
+.tracking-title-group h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.tracking-title-group p {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.tracking-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.tracking-status-pill.pill-indigo,
+.tracking-status-pill.pill-blue {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.tracking-status-pill.pill-emerald {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.tracking-status-pill.pill-amber {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.tracking-status-pill.pill-rose {
+  background: #ffe4e6;
+  color: #9f1239;
+  border: 1px solid #fecdd3;
+}
+
+.tracking-status-pill.pill-cyan {
+  background: #cffafe;
+  color: #155e75;
+  border: 1px solid #a5f3fc;
+}
+
+.tracking-status-pill.pill-slate {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+/* Stepper Track */
+.stepper-container {
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  position: relative;
+  overflow-x: auto;
+}
+
+.stepper-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  min-width: 660px;
+  width: 100%;
+}
+
+.stepper-line-bg {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  height: 3.5px;
+  background: #e2e8f0;
+  z-index: 1;
+  border-radius: 999px;
+}
+
+.stepper-line-progress {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  height: 3.5px;
+  background: #10b981;
+  z-index: 2;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.45);
+}
+
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  width: 90px;
+  text-align: center;
+}
+
+.stepper-node {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 2.5px solid #e2e8f0;
+  color: #94a3b8;
+  position: relative;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* 100% Green for completed stages as requested */
+.stepper-step.completed .stepper-node {
+  background: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+}
+
+/* Active Step: Electric Blue */
+.stepper-step.active .stepper-node {
+  background: #2563eb;
+  border-color: #93c5fd;
+  color: #ffffff;
+  box-shadow: 0 0 0 4.5px rgba(37, 99, 235, 0.25), 0 3px 10px rgba(37, 99, 235, 0.4);
+  animation: pulseNode 2s infinite;
+}
+
+@keyframes pulseNode {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.stepper-step.failed .stepper-node {
+  background: #ef4444;
+  border-color: #fca5a5;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.35);
+}
+
+.stepper-step.warning .stepper-node {
+  background: #f59e0b;
+  border-color: #fcd34d;
+  color: #ffffff;
+}
+
+.stepper-check-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9.5px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.stepper-step-label {
+  margin-top: 0.55rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.25;
+}
+
+.stepper-step.completed .stepper-step-label {
+  color: #059669;
+}
+
+.stepper-step.active .stepper-step-label {
+  color: #2563eb;
+}
+
+.stepper-step.upcoming .stepper-step-label {
+  color: #94a3b8;
+}
+
+.stepper-step-date {
+  margin-top: 0.25rem;
+  font-size: 0.715rem;
+  color: #64748b;
+  line-height: 1.2;
+}
+
+/* Bottom Grid Cards */
+.tracking-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.15rem;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .tracking-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Card: Status Banner (Metallic Blue) */
+.tracking-banner-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+  border-radius: 1.15rem;
+  padding: 1.45rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tracking-banner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.tracking-3d-box {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 8px 15px rgba(37, 99, 235, 0.22));
+  animation: floatBox 3.5s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.tracking-banner-text h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0369a1;
+  margin: 0 0 0.35rem 0;
+  line-height: 1.3;
+}
+
+.tracking-banner-text p {
+  font-size: 0.875rem;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Right Card: Details & Client Behavior */
+.tracking-detail-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 1.15rem;
+  padding: 1.35rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.tracking-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tracking-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.tracking-info-icon {
+  color: #64748b;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.tracking-info-label {
+  font-size: 0.835rem;
+  font-weight: 600;
+  color: #475569;
+  min-width: 120px;
+}
+
+.tracking-info-value {
+  font-size: 0.885rem;
+  color: #0f172a;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tracking-info-value strong {
+  font-weight: 600;
+}
+
+/* Client Behavior / Reliability Badge */
+.client-behavior-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.45rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.badge-excellent {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-regular {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-risk {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.badge-new {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.client-stats-text {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Estimated delivery pill (Blue) */
+.est-delivery-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 0.3rem 0.75rem;
+  border-radius: 0.45rem;
+  font-weight: 600;
+  font-size: 0.825rem;
+  width: fit-content;
+  border: 1px solid #bfdbfe;
+}
+
+/* Carrier name in blue */
+.tracking-carrier-name {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* Dark mode enhancements - Deep Metallic Blue Aesthetic */
+:root[data-theme='dark'] .tracking-main-card,
+:root[data-theme='dark'] .tracking-detail-card,
+:root[data-theme='dark'] .tracking-toolbar,
+.theme-dark .tracking-main-card,
+.theme-dark .tracking-detail-card,
+.theme-dark .tracking-toolbar {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+:root[data-theme='dark'] .tracking-title-group h1,
+:root[data-theme='dark'] .tracking-info-value,
+.theme-dark .tracking-title-group h1,
+.theme-dark .tracking-info-value {
+  color: #f8fafc;
+}
+
+:root[data-theme='dark'] .tracking-icon-badge,
+.theme-dark .tracking-icon-badge {
+  background: rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+}
+
+:root[data-theme='dark'] .tracking-carrier-name,
+.theme-dark .tracking-carrier-name {
+  color: #60a5fa;
+}
+
+:root[data-theme='dark'] .tracking-search-box,
+:root[data-theme='dark'] .tracking-pill-btn,
+.theme-dark .tracking-search-box,
+.theme-dark .tracking-pill-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+:root[data-theme='dark'] .tracking-pill-btn:hover,
+:root[data-theme='dark'] .tracking-pill-btn.active,
+.theme-dark .tracking-pill-btn:hover,
+.theme-dark .tracking-pill-btn.active {
+  background: rgba(37, 99, 235, 0.25);
+  color: #60a5fa;
+  border-color: #2563eb;
+}
+
+:root[data-theme='dark'] .tracking-search-box input,
+.theme-dark .tracking-search-box input {
+  color: #f8fafc;
+}
+
+/* Left Card: Deep Metallic Blue */
+:root[data-theme='dark'] .tracking-banner-card,
+.theme-dark .tracking-banner-card {
+  background: linear-gradient(135deg, #0b1f3a 0%, #0c2b54 100%);
+  border-color: #1d4ed8;
+  box-shadow: 0 6px 20px -3px rgba(14, 165, 233, 0.15);
+}
+
+:root[data-theme='dark'] .tracking-banner-text h2,
+.theme-dark .tracking-banner-text h2 {
+  color: #f0f9ff;
+}
+
+:root[data-theme='dark'] .tracking-banner-text p,
+.theme-dark .tracking-banner-text p {
+  color: #93c5fd;
+}
+
+:root[data-theme='dark'] .est-delivery-pill,
+.theme-dark .est-delivery-pill {
+  background: rgba(30, 58, 138, 0.35);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+:root[data-theme='dark'] .stepper-line-bg,
+.theme-dark .stepper-line-bg {
+  background: #1e293b;
+}
+
+:root[data-theme='dark'] .stepper-line-progress,
+.theme-dark .stepper-line-progress {
+  background: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+:root[data-theme='dark'] .stepper-node,
+.theme-dark .stepper-node {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+:root[data-theme='dark'] .stepper-step.completed .stepper-node,
+.theme-dark .stepper-step.completed .stepper-node {
+  background: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+}
+
+:root[data-theme='dark'] .stepper-step.completed .stepper-step-label,
+.theme-dark .stepper-step.completed .stepper-step-label {
+  color: #34d399;
+}
+
+:root[data-theme='dark'] .stepper-step.active .stepper-node,
+.theme-dark .stepper-step.active .stepper-node {
+  background: #2563eb;
+  border-color: #60a5fa;
+  color: #ffffff;
+  box-shadow: 0 0 0 4.5px rgba(37, 99, 235, 0.3), 0 3px 10px rgba(37, 99, 235, 0.5);
+}
+
+:root[data-theme='dark'] .stepper-step.active .stepper-step-label,
+.theme-dark .stepper-step.active .stepper-step-label {
+  color: #60a5fa;
+}
+
+:root[data-theme='dark'] .stepper-step.upcoming .stepper-step-label,
+.theme-dark .stepper-step.upcoming .stepper-step-label {
+  color: #64748b;
+}
+
+:root[data-theme='dark'] .stepper-check-badge,
+.theme-dark .stepper-check-badge {
+  border-color: #0f172a;
+}

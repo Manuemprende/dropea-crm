@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup CRM Dropea SQLite and encryption key
+After=dropea-crm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/dropea-crm/current/deploy/backup.py
+UMask=0077

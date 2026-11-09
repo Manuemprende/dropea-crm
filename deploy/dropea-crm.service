@@ -1,0 +1,28 @@
+[Unit]
+Description=CRM Dropea
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dropeacrm
+Group=dropeacrm
+WorkingDirectory=/var/lib/dropea-crm
+EnvironmentFile=/etc/dropea-crm/runtime.env
+ExecStart=/opt/dropea-crm/runtime/bin/node /opt/dropea-crm/current/server/index.js
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/dropea-crm
+MemoryMax=512M
+TasksMax=128
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
